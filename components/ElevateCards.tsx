@@ -5,10 +5,10 @@ export default function ElevateCards() {
     const isDarkMode = useColorScheme()==='dark';
   return (
     <View>
-      <Text style={isDarkMode?[styles.headingText,styles.whiteText]:[styles.headingText,styles.darkText]}>Media</Text>
+      <Text style={isDarkMode?[styles.headingText,styles.whiteText]:[styles.headingText,styles.darkText]}>Albums</Text>
       <ScrollView horizontal>
         <View style={styles.container}>
-            <Text style={styles.whiteText}>Tap</Text>
+            <Text style={isDarkMode?[styles.whiteText]:[styles.darkText]}>Tap</Text>
             <View style={[styles.card,styles.cardOne]}>
             <Text style={styles.whiteText}>Photos</Text>
         </View>
@@ -18,14 +18,14 @@ export default function ElevateCards() {
         <View style={[styles.card,styles.cardThree]}>
             <Text style={styles.whiteText}>Memories</Text>
         </View>
-        <View style={[styles.card,styles.cardTwo]}>
-            <Text style={styles.whiteText}>Memories</Text>
+        <View style={[styles.card,styles.cardFour]}>
+            <Text style={styles.whiteText}>Trip</Text>
         </View>
-        <View style={[styles.card,styles.cardOne]}>
-            <Text style={styles.whiteText}>Memories</Text>
+        <View style={[styles.card,styles.cardFive]}>
+            <Text style={styles.whiteText}>Birthday</Text>
         </View>
-        <View style={[styles.card,styles.cardThree]}>
-            <Text style={styles.whiteText}>Memories</Text>
+        <View style={[styles.card,styles.cardSix]}>
+            <Text style={styles.whiteText}>Woah!</Text>
         </View>
         </View>
       </ScrollView>
@@ -61,13 +61,22 @@ const styles = StyleSheet.create({
         alignItems:'center',
     },
     cardOne:{
-        backgroundColor: '#9027ec',
+        backgroundColor: '#6D214F',
     },
     cardTwo:{
-        backgroundColor: '#c2d6d0',
+        backgroundColor: '#182C61',
     },
     cardThree:{
-        backgroundColor: '#e9e253',
+        backgroundColor: '#FC427B',
+    },
+    cardFour:{
+        backgroundColor: '#FEA47F',
+    },
+    cardFive:{
+        backgroundColor: '#82589F',
+    },
+    cardSix:{
+        backgroundColor: '#F97F51',
     },
 
   })

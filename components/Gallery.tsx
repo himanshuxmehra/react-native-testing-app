@@ -11,10 +11,18 @@ import {useEffect, useState} from 'react';
 
 import {CameraRoll, PhotoIdentifier} from '@react-native-camera-roll/camera-roll';
 import { getDBConnection, createTable, getMediaItems, saveMediaItems } from '../services/local-database-service';
+import { FlatGrid } from 'react-native-super-grid';
 
-export default function Gallery() {
+import { NativeStackScreenProps} from '@react-navigation/native-stack';
+import { RootStackParamList } from '../src/App';
+import { useNavigation } from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack'
+
+type imageDetailProp = NativeStackScreenProps<RootStackParamList,'ImageDetail'>;
+
+export default function Gallery({navigation}:any) {
     const [data, setData] = useState<PhotoIdentifier[]>();
-
+  
   useEffect(() => {
     askPermission();
   }, []);
@@ -59,21 +67,36 @@ export default function Gallery() {
 
     return (
         <View>
-          <ScrollView>
+          {/* <ScrollView>
             {
             data?.map((item,i) => 
 
-              <Image
-                style={{
-                  width: '33%',
-                  height: 150,
-                }}
-                source={{uri: item.node.image.uri}}
-                key={i}
-              />
+              
             )
             }
-          </ScrollView>
+          </ScrollView> */}
+          <FlatGrid
+            itemDimension={125}
+            data={data}
+            spacing={4}
+            renderItem={({ item,index }) => (
+              <TouchableOpacity onPress={()=> 
+                navigation.push("ImageDetail", {
+                    imageUri:item.node.image.uri
+                })}>
+              <Image
+              style={{
+                width: '100%',
+                height: 125,
+                borderRadius: 3,
+
+              }}
+              source={{uri: item.node.image.uri}}
+              key={index}
+            />
+            </TouchableOpacity>
+          )}
+          />
         </View>
       );
 }

@@ -57,13 +57,13 @@ const styles = StyleSheet.create({
         alignItems:'center',
     },
     cardOne:{
-        backgroundColor: '#EF0344',
+        backgroundColor: '#3B3B98',
     },
     cardTwo:{
-        backgroundColor: '#50DBB4',
+        backgroundColor: '#FD7272',
     },
     cardThree:{
-        backgroundColor: '#5DA3FA',
+        backgroundColor: '#9AECDB',
     },
 
   })
