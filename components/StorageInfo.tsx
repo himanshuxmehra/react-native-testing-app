@@ -1,16 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import CameraModule from '../../components/CameraModule'
 
-const Camera = () => {
+const StorageInfo = () => {
   return (
     <View>
-      <Text>Camera</Text>
-      <CameraModule/>
+      <Text>StorageInfo</Text>
     </View>
   )
 }
 
-export default Camera
+export default StorageInfo
 
 const styles = StyleSheet.create({})

@@ -16,6 +16,7 @@ import ElevateCards from '../../components/ElevateCards';
 import Gallery from '../../components/Gallery';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../App';
+import SearchBar from '../../components/SearchBar';
 
 type HomeProps = NativeStackScreenProps<RootStackParamList,'Home'>;
 
@@ -24,27 +25,33 @@ function Home({navigation}:HomeProps) {
   const isDarkMode = useColorScheme() === 'dark';
 
   return(
-    <SafeAreaView
+    <View
       style={[
-        isDarkMode ? {backgroundColor: 'black'} : {backgroundColor: 'white'},
+        isDarkMode ? {backgroundColor: '#0e0f0f'} : {backgroundColor: '#0e0f0f'},
         {
           flex: 1,
-          paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+          overflow: "hidden",
         },
       ]}>
+        <StatusBar
+        animated={true}
+        backgroundColor="#415e67"
+        barStyle={'light-content'}
+        hidden={false}
+      />
       <ScrollView>
         <Text
           style={
-            isDarkMode
-              ? [styles.headingText, styles.whiteText]
-              : [styles.headingText, styles.darkText]
+            [styles.headingText, styles.darkText, {
+              paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 35, alignSelf:'center'
+            }]
           }>
           SOIDH
         </Text>
-        <FlatCards />
+        {/* <FlatCards /> */}
         <ElevateCards />
-        <Gallery navigation={ navigation }/>
-        <Button 
+        <SearchBar/>
+        {/* <Button 
             title='Go to that screen'
             // onPress={()=> 
             //     navigation.navigate("ImageDetail", {
@@ -52,14 +59,14 @@ function Home({navigation}:HomeProps) {
             //     })
             // }
             onPress={()=> 
-                navigation.push("ImageDetail", {
-                    imageUri:'test'
-                })
+                navigation.push("PhotoEditor2")
             }
-        />
+        /> */}
+        <Gallery navigation={ navigation }/>
+        
 
       </ScrollView>
-    </SafeAreaView>);
+    </View>);
 }
 
 const styles = StyleSheet.create({
@@ -71,12 +78,13 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   darkText: {
-    color: '#000',
+    color: '#FFF',
   },
   headingText: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 26,
+    fontWeight: '200',
     paddingHorizontal: 10,
+    margin:4
   },
 });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 
 
@@ -16,92 +16,58 @@ const NavigationIcon = ({route, isFocused}: NavigationIconProps) => {
     switch (route) {
       case 'home':
         return isFocues ? (
-          <Icon
-            name="image"
-            style={{
-              position: 'relative',
-              height: 50,
-              width: 50,
-              backgroundColor: '#000',
-              fontSize: 40,
-              justifyContent: 'center',
-              alignContent: 'center',
-            }}
-            color="#182C61"
-          />
+          <Image
+          style={{
+            width:35,
+            height:35,
+          }}
+          source={{
+            uri:'https://cdn0.iconfinder.com/data/icons/apple-apps/100/Apple_Photos-512.png'
+          }}/>
         ) : (
-          <Icon
-            name="image"
-            style={{
-              position: 'relative',
-              height: 50,
-              width: 50,
-              backgroundColor: '#000',
-              fontSize: 40,
-              justifyContent: 'center',
-              alignContent: 'center',
-            }}
-            color="#182C61"
-          />
+          <Image
+          style={{
+            width:35,
+            height:35,
+          }}
+          source={{
+            uri:'https://cdn0.iconfinder.com/data/icons/apple-apps/100/Apple_Photos-512.png'
+          }}/>
         );
       case 'folder':
         return isFocues ? (
           <Icon
             name="folder"
             style={{
-              position: 'relative',
-              height: 50,
-              width: 50,
-              backgroundColor: '#000',
-              fontSize: 40,
-              justifyContent: 'center',
-              alignContent: 'center',
+              fontSize: 30,
             }}
-            color="#182C61"
+            color="#fff"
           />
         ) : (
           <Icon
             name="folder"
             style={{
-              position: 'relative',
-              height: 50,
-              width: 50,
-              backgroundColor: '#000',
-              fontSize: 40,
-              justifyContent: 'center',
-              alignContent: 'center',
+              fontSize: 30,
             }}
-            color="#182C61"
+            color="#6b4eff"
           />
         );
       case 'camera':
         return isFocues ? (
           <Icon
-            name="camera"
+            name="camera-retro"
             style={{
-              position: 'relative',
-              height: 50,
-              width: 50,
-              backgroundColor: '#000',
-              fontSize: 40,
-              justifyContent: 'center',
-              alignContent: 'center',
+              fontSize: 30,
             }}
-            color="#182C61"
+            color="#fff"
           />
         ) : (
           <Icon
-            name="camera"
+            name="camera-retro"
             style={{
-              position: 'relative',
-              height: 50,
-              width: 50,
-              backgroundColor: '#000',
-              fontSize: 40,
-              justifyContent: 'center',
-              alignContent: 'center',
+              fontSize: 30,
             }}
-            color="#182C61"
+            color="#6b4eff"
           />
         );
       case 'notes':
@@ -109,29 +75,17 @@ const NavigationIcon = ({route, isFocused}: NavigationIconProps) => {
           <Icon
             name="clipboard"
             style={{
-              position: 'relative',
-              height: 50,
-              width: 50,
-              backgroundColor: '#000',
-              fontSize: 40,
-              justifyContent: 'center',
-              alignContent: 'center',
+              fontSize: 30,
             }}
-            color="#182C61"
+            color="#fff"
           />
         ) : (
           <Icon
             name="clipboard"
             style={{
-              position: 'relative',
-              height: 50,
-              width: 50,
-              backgroundColor: '#000',
-              fontSize: 40,
-              justifyContent: 'center',
-              alignContent: 'center',
+              fontSize: 30,
             }}
-            color="#182C61"
+            color="#6b4eff"
           />
         );
       case 'account':
@@ -139,29 +93,17 @@ const NavigationIcon = ({route, isFocused}: NavigationIconProps) => {
           <Icon
             name="user"
             style={{
-              position: 'relative',
-              height: 50,
-              width: 50,
-              backgroundColor: '#000',
-              fontSize: 40,
-              justifyContent: 'center',
-              alignContent: 'center',
+              fontSize: 30,
             }}
-            color="#182C61"
+            color="#fff"
           />
         ) : (
           <Icon
             name="user"
             style={{
-              position: 'relative',
-              height: 50,
-              width: 50,
-              backgroundColor: '#000',
-              fontSize: 40,
-              justifyContent: 'center',
-              alignContent: 'center',
+              fontSize: 30,
             }}
-            color="#182C61"
+            color="#6b4eff"
           />
         );
       default:

@@ -22,11 +22,12 @@ import Camera from './screens/Camera';
 import Account from './screens/Account';
 import Folders from './screens/Folders';
 import Notes from './screens/Notes';
+import PhotoEditor2 from './screens/TestScreen';
 
 
 export type RootStackParamList = {
   Home: undefined;
-  ImageDetail: { imageUri: string };
+  ImageDetail: { imageUri: string, imgIndex: number };
   //Feed: { sort: 'latest' | 'top' } | undefined;
 };
 
@@ -72,6 +73,9 @@ function App() {
           }}/>
       <Stack.Screen name="ImageDetail" component={ImageDetail} options={{
             headerShown: false
+          }}/>
+           <Stack.Screen name="PhotoEditor2" component={PhotoEditor2} options={{
+            headerShown: true
           }}/>
       </Stack.Navigator>
     </NavigationContainer>

@@ -1,54 +1,32 @@
-import { enablePromise, openDatabase, SQLiteDatabase } from 'react-native-sqlite-storage';
-import {MediaItem} from '../models';
+import { Platform } from 'react-native'
+import { Database } from '@nozbe/watermelondb'
+import SQLiteAdapter from '@nozbe/watermelondb/adapters/sqlite'
 
-const tableName = 'mediaData';
+import { schema } from '../models/schemas'
+import migrations from '../models/migrations'
+import Media from '../models/Media'
+// import Post from './model/Post' // ⬅️ You'll import your Models here
 
-enablePromise(true);
-
-export const getDBConnection = async () => {
-  return openDatabase({ name: 'media-data.db', location: 'default' });
-};
-
-export const createTable = async (db: SQLiteDatabase) => {
-  // create table if not exists
-  const query = `CREATE TABLE IF NOT EXISTS ${tableName}(
-        value TEXT NOT NULL
-    );`;
-
-  await db.executeSql(query);
-};
-
-export const getMediaItems = async (db: SQLiteDatabase): Promise<MediaItem[]> => {
-  try {
-    const mediaItems: MediaItem[] = [];
-    const results = await db.executeSql(`SELECT rowid as id,value FROM ${tableName}`);
-    results.forEach(result => {
-      for (let index = 0; index < result.rows.length; index++) {
-        mediaItems.push(result.rows.item(index))
-      }
-    });
-    return mediaItems;
-  } catch (error) {
-    console.error(error);
-    throw Error('Failed to get mediaItems !!!');
+// First, create the adapter to the underlying database:
+const adapter = new SQLiteAdapter({
+  schema,
+  // (You might want to comment it out for development purposes -- see Migrations documentation)
+  migrations,
+  // (optional database name or file system path)
+  // dbName: 'myapp',
+  // (recommended option, should work flawlessly out of the box on iOS. On Android,
+  // additional installation steps have to be taken - disable if you run into issues...)
+  jsi: true, /* Platform.OS === 'ios' */
+  // (optional, but you should implement this method)
+  onSetUpError: error => {
+    // Database failed to load -- offer the user to reload the app or log out
   }
-};
+})
 
-export const saveMediaItems = async (db: SQLiteDatabase, mediaItems: MediaItem[]) => {
-  const insertQuery =
-    `INSERT OR REPLACE INTO ${tableName}(rowid, value) values` +
-    mediaItems.map(i => `(${i.id}, '${i.value}')`).join(',');
-
-  return db.executeSql(insertQuery);
-};
-
-export const deleteMediaItem = async (db: SQLiteDatabase, id: number) => {
-  const deleteQuery = `DELETE from ${tableName} where rowid = ${id}`;
-  await db.executeSql(deleteQuery);
-};
-
-export const deleteTable = async (db: SQLiteDatabase) => {
-  const query = `drop table ${tableName}`;
-
-  await db.executeSql(query);
-};
+// Then, make a Watermelon database from it!
+export const database = new Database({
+  adapter,
+  modelClasses: [
+    Media
+  ],
+})

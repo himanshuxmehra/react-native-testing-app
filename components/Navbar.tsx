@@ -43,23 +43,22 @@ const TabBar = ({state, descriptors, navigation}: any) => {
         };
 
         return (
-          <View key={index} style={[styles.mainItemContainer]}>
+          <View
+            key={index}
+            style={[
+              styles.mainItemContainer,
+              {
+                flex: 1,
+                width: "70%",
+                marginLeft:5,
+                marginRight:5,
+                overflow: "hidden",
+            },
+            ]}>
             <Pressable
-              onPress={onPress}
-              style={{
-                backgroundColor: isFocused ? '#182C61' : '#182C61',
-                borderRadius: 5,
-                alignContent: 'center',
-                justifyContent: 'center',
-              }}>
+              onPress={onPress}>
               <View
                 style={{
-                  flex: 1,
-                  height: 50,
-                  width: 50,
-                  justifyContent: 'center',
-                  alignContent: 'center',
-                  borderColor:'#FFF',
                   padding:5,
                 }}>
                 <NavigationIcon route={label} isFocused={isFocused} />
@@ -77,7 +76,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     position: 'absolute',
     bottom: 25,
-    backgroundColor: '#182028',
+    backgroundColor: '#030303',
     borderRadius: 25,
     marginHorizontal: width * 0.1,
   },
@@ -87,7 +86,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: 10,
     borderRadius: 1,
+    width:'70%',
     borderColor: '#333B42',
+    flexDirection: 'row',
   },
 });
 

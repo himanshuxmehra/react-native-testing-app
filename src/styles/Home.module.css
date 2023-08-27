@@ -1,0 +1,270 @@
+.photo-editor {
+    background-color: #191b1d;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .photo-editor .div {
+    background-color: #191b1d;
+    border: 1px none;
+    height: 896px;
+    overflow: hidden;
+    position: relative;
+    width: 414px;
+  }
+  
+  .photo-editor .nav {
+    height: 49px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 414px;
+  }
+  
+  .photo-editor .iphone-x-bars-status {
+    height: 49px;
+    position: relative;
+  }
+  
+  .photo-editor .action {
+    height: 18px;
+    left: 20px;
+    position: absolute;
+    top: 16px;
+    width: 56px;
+  }
+  
+  .photo-editor .time {
+    color: #ffffff;
+    font-family: "SF Pro Text-Semibold", Helvetica;
+    font-size: 15px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: -0.17px;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    white-space: nowrap;
+    width: 54px;
+  }
+  
+  .photo-editor .container {
+    height: 12px;
+    left: 332px;
+    position: absolute;
+    top: 19px;
+    width: 67px;
+  }
+  
+  .photo-editor .battery {
+    background-image: url(./rectangle.svg);
+    background-size: 100% 100%;
+    height: 12px;
+    left: 42px;
+    position: absolute;
+    top: 0;
+    width: 24px;
+  }
+  
+  .photo-editor .rectangle {
+    background-color: #ffffff;
+    border-radius: 1.6px;
+    height: 8px;
+    left: 2px;
+    position: relative;
+    top: 2px;
+    width: 18px;
+  }
+  
+  .photo-editor .combined-shape {
+    height: 11px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 17px;
+  }
+  
+  .photo-editor .wi-fi {
+    height: 11px;
+    left: 22px;
+    position: absolute;
+    top: 0;
+    width: 15px;
+  }
+  
+  .photo-editor .ellipse {
+    height: 74px;
+    left: 25px;
+    object-fit: cover;
+    position: absolute;
+    top: 94px;
+    width: 74px;
+  }
+  
+  .photo-editor .img {
+    height: 74px;
+    left: 109px;
+    object-fit: cover;
+    position: absolute;
+    top: 94px;
+    width: 74px;
+  }
+  
+  .photo-editor .ellipse-2 {
+    height: 74px;
+    left: 193px;
+    object-fit: cover;
+    position: absolute;
+    top: 94px;
+    width: 74px;
+  }
+  
+  .photo-editor .ellipse-3 {
+    height: 74px;
+    left: 277px;
+    object-fit: cover;
+    position: absolute;
+    top: 94px;
+    width: 74px;
+  }
+  
+  .photo-editor .ellipse-4 {
+    height: 74px;
+    left: 361px;
+    object-fit: cover;
+    position: absolute;
+    top: 94px;
+    width: 53px;
+  }
+  
+  .photo-editor .group {
+    height: 44px;
+    left: 25px;
+    position: absolute;
+    top: 193px;
+    width: 364px;
+  }
+  
+  .photo-editor .overlap-group {
+    border-radius: 75px;
+    height: 44px;
+    position: relative;
+  }
+  
+  .photo-editor .group-wrapper {
+    background-color: #282828;
+    border-radius: 75px;
+    height: 44px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 364px;
+  }
+  
+  .photo-editor .group-2 {
+    height: 20px;
+    left: 20px;
+    position: relative;
+    top: 12px;
+    width: 206px;
+  }
+  
+  .photo-editor .text-wrapper {
+    color: #ffffff99;
+    font-family: "Poppins-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 20px;
+    left: 30px;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+  }
+  
+  .photo-editor .vuesax-linear-search {
+    height: 20px !important;
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 20px !important;
+  }
+  
+  .photo-editor .vuesax-linear {
+    height: 20px !important;
+    left: 325px !important;
+    position: absolute !important;
+    top: 12px !important;
+    width: 20px !important;
+  }
+  
+  .photo-editor .group-3 {
+    height: 738px;
+    left: 219px;
+    position: absolute;
+    top: 267px;
+    width: 170px;
+  }
+  
+  .photo-editor .rectangle-2 {
+    height: 230px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 170px;
+  }
+  
+  .photo-editor .rectangle-3 {
+    height: 121px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 508px;
+    width: 170px;
+  }
+  
+  .photo-editor .rectangle-4 {
+    height: 230px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 254px;
+    width: 170px;
+  }
+  
+  .photo-editor .group-4 {
+    height: 738px;
+    left: 25px;
+    position: absolute;
+    top: 322px;
+    width: 170px;
+  }
+  
+  .photo-editor .rectangle-5 {
+    height: 66px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 508px;
+    width: 170px;
+  }
+  
+  .photo-editor .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Poppins-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    height: 31px;
+    left: 36px;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: absolute;
+    top: 272px;
+    width: 157px;
+  }
+  
